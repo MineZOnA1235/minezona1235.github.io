@@ -1,1 +1,1 @@
-# minezona1235.github.iooooo
+# minezona1235.github.io
