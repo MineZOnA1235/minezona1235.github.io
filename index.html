@@ -3,84 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чат Telegram</title>
+    <title>LookIA Interface</title>
     <style>
+        html, body {
+            height: 100%; /* Занимаем всю высоту экрана */
+            margin: 0; /* Убираем отступы */
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e5e5e5;
-            margin: 0;
-            padding: 20px;
+            background: linear-gradient(to bottom, #ffffff, #000000); /* Градиент от белого к черному снизу */
+            background-attachment: fixed; /* Фиксируем фон */
+            font-family: 'Arial', sans-serif;
+            padding: 30px;
+            user-select: none; /* Отключаем выделение текста на странице */
         }
-        .chat-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px;
-            margin: auto;
-            overflow-y: auto;
-            height: 500px;
-        }
-        .message {
-            margin-bottom: 15px;
-            position: relative;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
-        .username {
+        h1 {
+            color: #212121; /* Заголовок */
             font-weight: bold;
-            color: #0088cc;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .text {
-            background-color: #f1f0f0;
-            border-radius: 10px;
-            padding: 10px;
-            display: inline-block;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #e0e0e0 30%, #b0bec5 70%); /* Градиент */
+            border-radius: 33px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: -20px;
+            font-size: 2em;
             position: relative;
-            word-wrap: break-word;
+            top: -35px;
+            transition: transform 0.2s; /* Плавный переход */
         }
-        .message:hover {
-            background-color: #f0f8ff;
-            transition: background-color 0.2s;
-        }
-        .message.sent {
-            align-self: flex-end;
-            background-color: #dcf8c6;
-        }
-        .message.received {
-            align-self: flex-start;
-        }
-        .message-container {
+        .command-container {
+            margin: 2px 0; /* Уменьшены отступы между командами */
+            background-color: #ffffff; /* Белый фон */
+            padding: 15px;
+            border-radius: 33px;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .command {
+            font-size: 20px;
+            font-weight: bold;
+            color: #424242; /* Команда */
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(189, 189, 189, 0.5); /* Полупрозрачный фон */
+        }
+        .button {
+            background-color: #757575; /* Кнопка */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            transition: background-color 0.3s, transform 0.3s;
+            height: 40px;
+            -webkit-tap-highlight-color: transparent; /* Отключаем синее выделение на мобильных устройствах */
+        }
+        .button:hover {
+            background-color: #616161; /* Цвет при наведении */
+        }
+        .button.active {
+            transform: scale(1.16);
+            background-color: #424242; /* Активная кнопка */
+        }
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            margin: 5px 0; /* Уменьшены отступы между описанием и командами */
+            background-color: #e0e0e0; /* Фон деталей */
+            border-radius: 33px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 14px;
+        }
+        .details.show {
+            max-height: 100000px;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
 
-<div class="chat-container">
-    <div class="message-container">
-        <div class="message received">
-            <span class="username">Пользователь1</span>
-            <div class="text">Привет! Как дела?</div>
-        </div>
-        <div class="message sent">
-            <span class="username">Пользователь2</span>
-            <div class="text">Все хорошо, спасибо! А у тебя?</div>
-        </div>
-        <div class="message received">
-            <span class="username">Пользователь1</span>
-            <div class="text">Тоже отлично! Готовлюсь к выходным.</div>
-        </div>
-        <div class="message sent">
-            <span class="username">Пользователь2</span>
-            <div class="text">Звучит здорово! Какие планы?</div>
-        </div>
-    </div>
-</div>
+    <h1 id="title">LookIA</h1>
 
+    <div class="command-container">
+        <div class="command">type</div>
+        <button class="button" onclick="toggleDetails('detailsType', this)">Подробнее</button>
+    </div>
+    <div id="detailsType" class="details">
+        <div>Описание команды "type": Здесь вы можете узнать больше о команде "type". Используйте ее для получения информации о типах данных.</div>
+    </div>
+
+    <div class="command-container">
+        <div class="command">code</div>
+        <button class="button" onclick="toggleDetails('detailsCode', this)">Подробнее</button>
+    </div>
+    <div id="detailsCode" class="details">
+        <div>Описание команды "code": Здесь вы можете узнать больше о команде "code". Используйте ее для написания и выполнения кода.</div>
+    </div>
+
+    <script>
+        function toggleDetails(id, button) {
+            const details = document.getElementById(id);
+            const isVisible = details.classList.contains('show');
+
+            if (isVisible) {
+                // Скрываем детали
+                details.style.maxHeight = "0";
+                details.classList.remove('show');
+                button.classList.remove('active');
+            } else {
+                // Показываем детали
+                details.style.maxHeight = details.scrollHeight + "px"; // Устанавливаем высоту для показа
+                details.classList.add('show'); // Показываем детали
+                button.classList.add('active'); // Активируем кнопку
+            }
+        }
+
+        const title = document.getElementById('title');
+        
+        // Добавляем события для мыши
+        title.addEventListener('mousedown', () => {
+            title.style.transform = 'scale(1.05)'; // Увеличиваем при нажатии
+        });
+
+        title.addEventListener('mouseup', () => {
+            title.style.transform = 'scale(1)'; // Возвращаем в исходное положение
+        });
+
+        title.addEventListener('mouseleave', () => {
+            title.style.transform = 'scale(1)'; // Возвращаем в исходное положение, если мышь покинула заголовок
+        });
+        
+        // Добавляем события для сенсорных устройств
+        title.addEventListener('touchstart', () => {
+            title.style.transform = 'scale(1.05)'; // Увеличиваем при нажатии
+        });
+
+        title.addEventListener('touchend', () => {
+            title.style.transform = 'scale(1)'; // Возвращаем в исходное положение
+        });
+    </script>
 </body>
 </html>
