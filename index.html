@@ -6,84 +6,84 @@
     <title>LookIA Interface</title>
     <style>
         html, body {
-            height: 100%;
-            margin: 0;
+            height: 100%; /* Занимаем всю высоту экрана */
+            margin: 0; /* Убираем отступы */
         }
         body {
-            background: linear-gradient(to bottom, #ffffff, #000000);
-            background-attachment: fixed;
-            font-family: 'Arial', sans-serif;
-            padding: 30px;
-            user-select: none;
+            background: linear-gradient(to bottom, #ffffff, #000000); /* Градиент от белого к черному */
+            background-attachment: fixed; /* Фиксируем фон */
+            font-family: 'Arial', sans-serif; /* Шрифт для всего тела */
+            padding: 30px; /* Отступы вокруг содержимого */
+            user-select: none; /* Отключаем выделение текста на странице */
         }
         h1 {
-            color: #212121;
-            font-weight: bold;
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #e0e0e0 30%, #b0bec5 70%);
-            border-radius: 100px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: -20px;
-            font-size: 3em;
-            position: relative;
-            top: -35px;
-            transition: transform 0.2s;
+            color: #212121; /* Цвет заголовка */
+            font-weight: bold; /* Жирный шрифт */
+            text-align: center; /* Центрируем текст */
+            padding: 20px; /* Отступы вокруг заголовка */
+            background: linear-gradient(135deg, #e0e0e0 30%, #b0bec5 70%); /* Градиент для фона заголовка */
+            border-radius: 100px; /* Скругление углов */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень под заголовком */
+            margin-bottom: -20px; /* Отрицательный отступ снизу */
+            font-size: 3em; /* Размер шрифта заголовка */
+            position: relative; /* Относительное позиционирование для сдвига */
+            top: -35px; /* Сдвиг заголовка вверх */
+            transition: transform 0.2s; /* Плавный переход для трансформации */
         }
         .command-container {
-            margin: 2px 0;
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 2px 0; /* Отступы между контейнерами команд */
+            background-color: #ffffff; /* Белый фон для контейнера */
+            padding: 15px; /* Отступы внутри контейнера */
+            border-radius: 25px; /* Скругление углов контейнера */
+            display: flex; /* Используем flex для выравнивания элементов */
+            justify-content: space-between; /* Разделяем элементы по краям */
+            align-items: center; /* Выравниваем элементы по центру */
+            position: relative; /* Относительное позиционирование */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень под контейнером */
         }
         .command {
-            font-size: 20px;
-            font-weight: bold;
-            color: #424242;
-            padding: 10px;
-            border-radius: 100px;
-            background-color: rgba(189, 189, 189, 0.5);
+            font-size: 20px; /* Размер шрифта команды */
+            font-weight: bold; /* Жирный шрифт для команды */
+            color: #424242; /* Цвет текста команды */
+            padding: 10px; /* Отступы внутри команды */
+            border-radius: 100px; /* Скругление углов команды */
+            background-color: rgba(189, 189, 189, 0.5); /* Полупрозрачный фон для команды */
         }
         .button {
-            background-color: #757575;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 80px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            transition: background-color 0.3s, transform 0.3s;
-            height: 40px;
-            -webkit-tap-highlight-color: transparent;
+            background-color: #757575; /* Цвет фона кнопки */
+            border: none; /* Убираем рамку */
+            padding: 10px 20px; /* Отступы внутри кнопки */
+            border-radius: 80px; /* Скругление углов кнопки */
+            cursor: pointer; /* Изменяем курсор при наведении */
+            font-size: 16px; /* Размер шрифта кнопки */
+            font-weight: bold; /* Жирный шрифт для кнопки */
+            color: white; /* Цвет текста кнопки */
+            transition: background-color 0.3s, transform 0.3s; /* Плавные переходы для фона и трансформации */
+            height: 40px; /* Высота кнопки */
+            -webkit-tap-highlight-color: transparent; /* Отключаем выделение на мобильных устройствах */
         }
         .button:hover {
-            background-color: #616161;
+            background-color: #616161; /* Цвет кнопки при наведении */
         }
         .button.active {
-            transform: scale(1.16);
-            background-color: #424242;
+            transform: scale(1.16); /* Увеличиваем кнопку при активации */
+            background-color: #424242; /* Цвет активной кнопки */
         }
         .details {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-            margin: 5px 0;
-            background-color: #e0e0e0;
-            border-radius: 25px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 14px;
+            max-height: 0; /* Начальная высота для скрытия */
+            overflow: hidden; /* Скрываем переполнение */
+            opacity: 0; /* Начальная непрозрачность */
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Плавные переходы для высоты и непрозрачности */
+            margin: 5px 0; /* Отступы между деталями и командами */
+            background-color: #e0e0e0; /* Фон деталей */
+            border-radius: 25px; /* Скругление углов для деталей */
+            font-weight: bold; /* Жирный шрифт для текста деталей */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень под деталями */
+            padding: 14px; /* Отступы внутри деталей */
         }
         .details.show {
-            max-height: 100000px;
-            opacity: 1;
+            max-height: 100000px; /* Высота для показа деталей */
+            opacity: 1; /* Полная непрозрачность при показе */
         }
     </style>
 </head>
@@ -113,36 +113,36 @@
             const isVisible = details.classList.contains('show');
 
             if (isVisible) {
-                details.style.maxHeight = "0";
-                details.classList.remove('show');
-                button.classList.remove('active');
+                details.style.maxHeight = "0"; // Скрываем детали
+                details.classList.remove('show'); // Убираем класс показа
+                button.classList.remove('active'); // Убираем активный класс у кнопки
             } else {
-                details.style.maxHeight = details.scrollHeight + "px";
-                details.classList.add('show');
-                button.classList.add('active');
+                details.style.maxHeight = details.scrollHeight + "px"; // Устанавливаем высоту для показа
+                details.classList.add('show'); // Добавляем класс показа
+                button.classList.add('active'); // Добавляем активный класс к кнопке
             }
         }
 
         const title = document.getElementById('title');
         
         title.addEventListener('mousedown', () => {
-            title.style.transform = 'scale(1.05)';
+            title.style.transform = 'scale(1.05)'; // Увеличиваем заголовок при нажатии
         });
 
         title.addEventListener('mouseup', () => {
-            title.style.transform = 'scale(1)';
+            title.style.transform = 'scale(1)'; // Возвращаем в исходное положение
         });
 
         title.addEventListener('mouseleave', () => {
-            title.style.transform = 'scale(1)';
+            title.style.transform = 'scale(1)'; // Возвращаем в исходное положение при выходе мыши
         });
         
         title.addEventListener('touchstart', () => {
-            title.style.transform = 'scale(1.05)';
+            title.style.transform = 'scale(1.05)'; // Увеличиваем заголовок при касании
         });
 
         title.addEventListener('touchend', () => {
-            title.style.transform = 'scale(1)';
+            title.style.transform = 'scale(1)'; // Возвращаем в исходное положение
         });
     </script>
 </body>
