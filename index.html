@@ -96,7 +96,7 @@
         <button class="button" onclick="toggleDetails('detailsType', this)">Подробнее</button>
     </div>
     <div id="detailsType" class="details">
-        <div>Описание команды "type": Здесь вы можете узнать больше о команде "type". Используйте ее для получения информации о типах данных.</div>
+        <div>Описание команды "type": <br><br>- Здесь вы можете узнать больше о команде "type". Используйте ее для получения информации о типах данных.</div>
     </div>
 
     <div class="command-container">
@@ -104,7 +104,15 @@
         <button class="button" onclick="toggleDetails('detailsCode', this)">Подробнее</button>
     </div>
     <div id="detailsCode" class="details">
-        <div>Описание команды "code": Здесь вы можете узнать больше о команде "code". Используйте ее для написания и выполнения кода.</div>
+        <div>Описание команды "code": <br><br>- Здесь вы можете узнать больше о команде "code". Используйте ее для написания и выполнения кода.</div>
+    </div>
+
+ <div class="command-container">
+        <div class="command">ping</div>
+        <button class="button" onclick="toggleDetails('detailsPing', this)">Подробнее</button>
+    </div>
+    <div id="detailsPing" class="details">
+        <div>Описание команды "ping": <br><br>- Здесь вы можете узнать больше о команде "type". Используйте ее для получения информации о типах данных.</div>
     </div>
 
     <script>
@@ -126,7 +134,7 @@
         const title = document.getElementById('title');
         
         title.addEventListener('mousedown', () => {
-            title.style.transform = 'scale(1.05)'; // Увеличиваем заголовок при нажатии
+            title.style.transform = 'scale(1.15)'; // Увеличиваем заголовок при нажатии
         });
 
         title.addEventListener('mouseup', () => {
@@ -138,7 +146,7 @@
         });
         
         title.addEventListener('touchstart', () => {
-            title.style.transform = 'scale(1.05)'; // Увеличиваем заголовок при касании
+            title.style.transform = 'scale(1.15)'; // Увеличиваем заголовок при касании
         });
 
         title.addEventListener('touchend', () => {
