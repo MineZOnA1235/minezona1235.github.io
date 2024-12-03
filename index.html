@@ -116,7 +116,7 @@
     </div>
     
     <div class="command-container">
-        <div class="command">code</div>
+        <div class="command">spam</div>
         <button class="button" onclick="toggleDetails('detailsSpam', this)">Подробнее</button>
     </div>
     <div id="detailsSpam" class="details">
@@ -139,7 +139,7 @@
         <div>Описание команды "voice": <br><br>- По команде .voice {текст} вы сможете сделать из текста голосовое сообщение. </div>
     </div>
     
-        <div class="command-container">
+    <div class="command-container">
         <div class="command">bombtg</div>
         <button class="button" onclick="toggleDetails('detailsBombtg', this)">Подробнее</button>
     </div>
@@ -147,6 +147,8 @@
         <div>Описание команды "bombtg": <br><br>- По команде .bombtg {номер телефона} вы сможете отправить </div>
     </div>
     
+    <div style="height: 3cm;"></div> <!-- Свободное пространство внизу -->
+
     <script>
         function toggleDetails(id, button) {
             const details = document.getElementById(id);
