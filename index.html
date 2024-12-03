@@ -116,7 +116,7 @@
     </div>
     
     <div class="command-container">
-        <div class="command">spam</div>
+        <div class="command">code</div>
         <button class="button" onclick="toggleDetails('detailsSpam', this)">Подробнее</button>
     </div>
     <div id="detailsSpam" class="details">
@@ -136,7 +136,15 @@
         <button class="button" onclick="toggleDetails('detailsVoice', this)">Подробнее</button>
     </div>
     <div id="detailsVoice" class="details">
-        <div>Описание команды "voice": <br><br>- По команде .voice {текст}. </div>
+        <div>Описание команды "voice": <br><br>- По команде .voice {текст} вы сможете сделать из текста голосовое сообщение. </div>
+    </div>
+    
+        <div class="command-container">
+        <div class="command">bombtg</div>
+        <button class="button" onclick="toggleDetails('detailsBombtg', this)">Подробнее</button>
+    </div>
+    <div id="detailsBombtg" class="details">
+        <div>Описание команды "bombtg": <br><br>- По команде .bombtg {номер телефона} вы сможете отправить </div>
     </div>
     
     <script>
@@ -170,7 +178,7 @@
         });
         
         title.addEventListener('touchstart', () => {
-            title.style.transform = 'scale(1.05)'; // Увеличиваем заголовок при касании
+            title.style.transform = 'scale(1.10)'; // Увеличиваем заголовок при касании
         });
 
         title.addEventListener('touchend', () => {
