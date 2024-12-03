@@ -21,7 +21,7 @@
             font-weight: bold; /* Жирный шрифт */
             text-align: center; /* Центрируем текст */
             padding: 20px; /* Отступы вокруг заголовка */
-            background: linear-gradient(135deg, #e0e0e0 30%, #b0bec5 70%); /* Градиент для фона заголовка */
+            background: linear-gradient(135deg, #424242 30%, #b0bec5 70%); /* Градиент для фона заголовка */
             border-radius: 100px; /* Скругление углов */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тень под заголовком */
             margin-bottom: -20px; /* Отрицательный отступ снизу */
@@ -50,7 +50,7 @@
             background-color: rgba(189, 189, 189, 0.5); /* Полупрозрачный фон для команды */
         }
         .button {
-            background-color: #757575; /* Цвет фона кнопки */
+            background-color: #757570; /* Цвет фона кнопки */
             border: none; /* Убираем рамку */
             padding: 10px 20px; /* Отступы внутри кнопки */
             border-radius: 80px; /* Скругление углов кнопки */
@@ -63,7 +63,7 @@
             -webkit-tap-highlight-color: transparent; /* Отключаем выделение на мобильных устройствах */
         }
         .button:hover {
-            background-color: #616161; /* Цвет кнопки при наведении */
+            background-color: #757570; /* Цвет кнопки при наведении */
         }
         .button.active {
             transform: scale(1.16); /* Увеличиваем кнопку при активации */
@@ -92,11 +92,11 @@
     <h1 id="title">ʟᴏᴏᴋɪᴀ</h1>
 
     <div class="command-container">
-        <div class="command">typi</div>
+        <div class="command">type</div>
         <button class="button" onclick="toggleDetails('detailsType', this)">Подробнее</button>
     </div>
     <div id="detailsType" class="details">
-        <div>Описание команды "type": <br><br>- Здесь вы можете узнать больше о команде "type". Используйте ее для получения информации о типах данных.</div>
+        <div>Описание команды "type": <br><br>- По команде .type {текст} вы сможете отправить сообщение с красивым шрифтом, также есть возможность выбора шрифта (в разработке). </div>
     </div>
 
     <div class="command-container">
@@ -104,17 +104,41 @@
         <button class="button" onclick="toggleDetails('detailsCode', this)">Подробнее</button>
     </div>
     <div id="detailsCode" class="details">
-        <div>Описание команды "code": <br><br>- Здесь вы можете узнать больше о команде "code". Используйте ее для написания и выполнения кода.</div>
+        <div>Описание команды "code": <br><br>- По команде .code {название} {текст} вы сможете отправить сообщение в виде кода, очень полезно если вы хотите поделится кодом. </div>
     </div>
 
- <div class="command-container">
+    <div class="command-container">
         <div class="command">ping</div>
         <button class="button" onclick="toggleDetails('detailsPing', this)">Подробнее</button>
     </div>
     <div id="detailsPing" class="details">
-        <div>Описание команды "ping": <br><br>- Здесь вы можете узнать больше о команде "type". Используйте ее для получения информации о типах данных.</div>
+        <div>Описание команды "ping": <br><br>- По команде .ping вы сможете узнать задержку на TelegramAPI. </div>
     </div>
-
+    
+    <div class="command-container">
+        <div class="command">code</div>
+        <button class="button" onclick="toggleDetails('detailsSpam', this)">Подробнее</button>
+    </div>
+    <div id="detailsSpam" class="details">
+        <div>Описание команды "spam": <br><br>- По команде .spam {число} {текст} вы сможете отправить очень быстро несколько одинаковых сообщений. </div>
+    </div>
+    
+    <div class="command-container">
+        <div class="command">dell</div>
+        <button class="button" onclick="toggleDetails('detailsDell', this)">Подробнее</button>
+    </div>
+    <div id="detailsDell" class="details">
+        <div>Описание команды "dell": <br><br>- По команде .dell {число} вы сможете удалите сразу несколько сообщений одной командой. </div>
+    </div>
+    
+    <div class="command-container">
+        <div class="command">voice</div>
+        <button class="button" onclick="toggleDetails('detailsVoice', this)">Подробнее</button>
+    </div>
+    <div id="detailsVoice" class="details">
+        <div>Описание команды "voice": <br><br>- По команде .voice {текст}. </div>
+    </div>
+    
     <script>
         function toggleDetails(id, button) {
             const details = document.getElementById(id);
